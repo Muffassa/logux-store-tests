@@ -1,0 +1,14 @@
+{
+  "lang": "en",
+  "ignoreCapitalization": true,
+  "excludeFiles": [
+    "docs/*.js.html"
+  ],
+  "dictionary": [
+    "Logux",
+    "docdash",
+    "JSDoc",
+    "js",
+    "Versioning"
+  ]
+}
