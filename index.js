@@ -1,6 +1,6 @@
-'use strict'
+"use strict";
 
-const assert = require('assert')
+const assert = require("assert");
 
 /**
  * Pass all common tests for Logux store to callback.
@@ -16,11 +16,25 @@ const assert = require('assert')
  *   it(desc, creator(() => new CustomStore()))
  * })
  */
-module.exports = function eachTest (test) {
-  test('is a object', store => () => {
-    assert.deepEqual(typeof store, 'object')
-  })
-}
+module.exports = function eachTest(test) {
+  test("store class provide standart methods", store => () => {
+    var storeStandartMethods = [
+      "add",
+      "has",
+      "get",
+      "remove",
+      "changeMeta",
+      "removeReason",
+      "getLastAdded",
+      "getLastSynced",
+      "setLastSynced"
+    ];
+
+    storeStandartMethods.map(standartMethod => {
+      assert.deepEqual(typeof store[standartMethod], "function");
+    });
+  });
+};
 
 /**
  * @callback creator
